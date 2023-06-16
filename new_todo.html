@@ -13,9 +13,8 @@
 
 
 <body>
-    <a href="todo.html">go to todo</a>
-    <h1>Create new Todo:</h1>
-    <label> User:</label>
+    <h1>Create a TODO's page</h1>
+    <label>Select a User:</label>
     <div class="row">
         <div class="col-md-4">
             <select name="selectUser" id="selectUser" class="form-control">
@@ -23,6 +22,32 @@
             </select>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-4">
+            <select name="selectCategory" id="selectCategory" class="form-control">
+                <option value="">Type of Category:</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <select name="selectPriority" id="selectPriority" class="form-control">
+                <option value="">Select your Priority</option>
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+            </select>
+        </div>
+    </div>
+    <label class="description">Description:</label>
+    <textarea id="description" name="description" rows="10" cols="100" class="description"></textarea>
+
+    <br>
+    <label>Deadline:</label>
+    <input type="text" id="deadlineText" class="deadline">
+<br>
+    <button id="addNewTodo" class="addNewTodo">ADD</button>
+    <script src="new_todo.js"></script>
 </body>
 
 </html>
