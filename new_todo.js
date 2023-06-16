@@ -1,6 +1,10 @@
-selectUserEl = document.getElementById(`selectUser`);
-selectCategoryEl = document.getElementById(`selectCategory`);
-selectPriorityEl = document.getElementById(`selectPriority`);
+const selectUserEl = document.getElementById(`selectUser`);
+const selectCategoryEl = document.getElementById(`selectCategory`);
+const selectPriorityEl = document.getElementById(`selectPriority`);
+const addNewTodoEl = document.getElementById(`addNewTodo`);
+const descriptionEl = document.getElementById(`description`);
+const deadlineEl = document.getElementById(`deadline`);
+//-----------------------------------------------------------------------------
 
 function selectUserdropdown() {
   fetch(`http://localhost:8083/api/users`)
@@ -30,6 +34,28 @@ function selectCategorydropdown() {
     });
 }
 
+addNewTodoEl.addEventListener(`click`, () => {
+    const selectedcategory = selectCategoryEl.value;
+    const selecteduser = selectUserEl.value
+    const description = descriptionEl.value
+    //const selectedPriority = selectPriorityEl.value
+    localStorage.setItem("Category", selectedcategory)
+    localStorage.setItem("Name", selecteduser)
+    localStorage.setItem("Description", description)
+    //localStorage.setItem("Priority",selectPriorityEl.value)
+    if(selectPriorityEl.value === "Low") {
+        localStorage.setItem("Priority", "Low")
+    }
+    else if(selectPriorityEl.value === "Medium") {
+        localStorage.setItem("Priority", "Medium");
+    }
+    else if(selectPriorityEl.value === "High") {
+        localStorage.setItem("Priority", "High");
+    }
+    
+    
 
+})
+//----------------------------------------------------------
 selectUserdropdown();
 selectCategorydropdown();

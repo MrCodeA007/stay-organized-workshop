@@ -1,6 +1,10 @@
 const tableEl = document.getElementById(`usersTable`);
 const searchUserEl = document.getElementById(`searchUser`);
 const toNewTodoBtnEl = document.getElementById(`toNewTodo`);
+const categoryStore = localStorage.getItem("Category")
+const nameStore = localStorage.getItem("Name")
+const priorityStore = localStorage.getItem("Priority")
+//---------------------------------------------------------
 
 toNewTodoBtnEl.addEventListener(`click`, () => {
   window.location.href = "new_todo.html";
