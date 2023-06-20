@@ -36,12 +36,15 @@ function selectCategorydropdown() {
 
 addNewTodoEl.addEventListener(`click`, () => {
     const selectedcategory = selectCategoryEl.value;
-    const selecteduser = selectUserEl.value
-    const description = descriptionEl.value
+    const selecteduser = selectUserEl.value;
+    const description = descriptionEl.value;
+    //const deadline = deadlineEl.value; fix this
+
     //const selectedPriority = selectPriorityEl.value
     localStorage.setItem("Category", selectedcategory)
     localStorage.setItem("Name", selecteduser)
     localStorage.setItem("Description", description)
+    //localStorage.setItem("Deadline", deadline) fix this 
     //localStorage.setItem("Priority",selectPriorityEl.value)
     if(selectPriorityEl.value === "Low") {
         localStorage.setItem("Priority", "Low")
